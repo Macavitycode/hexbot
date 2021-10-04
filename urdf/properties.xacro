@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="hexbot"
+  xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="lower_limit" value="-1" />
+  <xacro:property name="upper_limit" value="1" />
+  <xacro:property name="effort_limit" value="0" />
+  <xacro:property name="velocity_limit" value="0" />
+
+</robot>

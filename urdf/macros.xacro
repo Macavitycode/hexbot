@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="hexbot"
+  xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="properties.xacro" />
+
+  <xacro:macro
+    name="base_link_macro" >
+    <link
+      name="base_link">
+      <inertial>
+        <origin
+          xyz="-5.7578E-17 -0.026865 -5.6409E-17"
+          rpy="0 0 0" />
+        <mass
+          value="0.45569" />
+        <inertia
+          ixx="0.00067888"
+          ixy="-1.6518E-19"
+          ixz="4.3182E-15"
+          iyy="0.0012021"
+          iyz="-3.5752E-19"
+          izz="0.00067888" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://hexbot/meshes/base_link.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="1 1 1 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://hexbot/meshes/base_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro
+    name="thigh_link_macro"
+    params="num" >
+    <link
+      name="thigh_${num}">
+      <inertial>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <mass
+          value="0.0416454946793614" />
+        <inertia
+          ixx="1.01464532907881E-05"
+          ixy="-9.01102352886516E-08"
+          ixz="5.83026179577091E-08"
+          iyy="9.79635939418219E-06"
+          iyz="2.29962924939912E-11"
+          izz="1.11686383627586E-05" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://hexbot/meshes/thigh.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="1 1 1 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://hexbot/meshes/thigh.STL" />
+        </geometry>
+      </collision>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro
+    name="shin_link_macro"
+    params="num" >
+    <link
+      name="shin_${num}">
+      <inertial>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <mass
+          value="0.0416454939081647" />
+        <inertia
+          ixx="1.01464529463005E-05"
+          ixy="-5.79008683658633E-11"
+          ixz="1.48086764022737E-07"
+          iyy="1.42061146123856E-05"
+          iyz="-6.47788995139536E-12"
+          izz="6.7588826935067E-06" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://hexbot/meshes/shin.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="1 1 1 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://hexbot/meshes/shin.STL" />
+        </geometry>
+      </collision>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro
+    name="foot_link_macro"
+    params="num" >
+    <link
+      name="foot_${num}">
+      <inertial>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <mass
+          value="0.0264807627517247" />
+        <inertia
+          ixx="5.16912819060422E-06"
+          ixy="-1.91682876233419E-10"
+          ixz="5.8167586632756E-08"
+          iyy="7.99193660112382E-06"
+          iyz="7.92351583964294E-12"
+          izz="4.71320299684973E-06" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://hexbot/meshes/foot.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="1 1 1 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://hexbot/meshes/foot.STL" />
+        </geometry>
+      </collision>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro
+    name="thigh_joint_macro"
+    params="num *origin">
+    <joint
+      name="thigh_${num}_joint"
+      type="revolute">
+      <xacro:insert_block name="origin" />
+      <parent
+        link="base_link" />
+      <child
+        link="thigh_${num}" />
+      <axis
+        xyz="0 0 1" />
+      <limit
+        lower="${lower_limit}"
+        upper="${upper_limit}"
+        effort="${effort_limit}"
+        velocity="${velocity_limit}" />
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro
+    name="shin_joint_macro"
+    params="num *origin">
+    <joint
+      name="shin_${num}_joint"
+      type="revolute">
+      <xacro:insert_block name="origin" />
+      <parent
+        link="thigh_${num}" />
+      <child
+        link="shin_${num}" />
+      <axis
+        xyz="0 0 1" />
+      <limit
+        lower="${lower_limit}"
+        upper="${upper_limit}"
+        effort="${effort_limit}"
+        velocity="${velocity_limit}" />
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro
+    name="foot_joint_macro"
+    params="num *origin">
+    <joint
+      name="foot_${num}_joint"
+      type="revolute">
+      <xacro:insert_block name="origin" />
+      <parent
+        link="shin_${num}" />
+      <child
+        link="foot_${num}" />
+      <axis
+        xyz="0 0 1" />
+      <limit
+        lower="${lower_limit}"
+        upper="${upper_limit}"
+        effort="${effort_limit}"
+        velocity="${velocity_limit}" />
+    </joint>
+  </xacro:macro>
+
+</robot>
