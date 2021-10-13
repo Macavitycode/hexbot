@@ -15,6 +15,9 @@ for hexbot robot</p>
   <depend>joint_state_publisher</depend>
   <depend>joint_state_publisher_gui</depend>
   <depend>gazebo_ros</depend>
+  <depend>roscpp</depend>
+  <depend>gazebo_msgs</depend>
+  <depend>std_msgs</depend>
   <export>
     <architecture_independent />
   </export>
