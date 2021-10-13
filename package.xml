@@ -10,14 +10,21 @@ for hexbot robot</p>
   <maintainer email="TODO@email.com" />
   <license>BSD</license>
   <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>gazebo_dev</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
   <depend>robot_state_publisher</depend>
   <depend>rviz</depend>
   <depend>joint_state_publisher</depend>
   <depend>joint_state_publisher_gui</depend>
   <depend>gazebo_ros</depend>
-  <depend>roscpp</depend>
   <depend>gazebo_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
   <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>roscpp</depend>
+  <depend>urdf</depend>
+  <depend>dynamic_reconfigure</depend>
   <export>
     <architecture_independent />
   </export>
