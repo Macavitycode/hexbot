@@ -12,6 +12,8 @@ find_package(catkin REQUIRED
     gazebo_dev
     std_srvs
     urdf
+    message_generation
+    message_runtime
     )
 
 include (FindPkgConfig)
@@ -26,6 +28,15 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+add_message_files(
+  FILES
+  vel_msg.msg
+)
+
+generate_messages(
+    DEPENDENCIES
+    )
+
 link_directories(
   ${catkin_LIBRARY_DIRS}
   ${GAZEBO_LIBRARY_DIRS}
@@ -36,6 +47,7 @@ catkin_package(
   LIBRARIES
 
   CATKIN_DEPENDS
+  message_generation
   message_runtime
   gazebo_msgs
   roscpp
@@ -49,5 +61,5 @@ catkin_package(
 
 # add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS})
 
-add_executable(hexbot_node src/main.cpp src/controller.cpp)
+add_executable(hexbot_node src/publisher.cpp src/subscriber.cpp)
 target_link_libraries(hexbot_node ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
