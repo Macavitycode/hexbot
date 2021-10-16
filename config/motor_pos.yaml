@@ -1,0 +1,36 @@
+# Defining motor positions
+hexbot:
+
+  p: 1.0
+  i: 0.0
+  d: 0.0
+
+  leg1:
+    hip1: 0.0
+    knee1: 0.0
+    ankle1: 0.0
+
+  leg2:
+    hip2: 0.0
+    knee2: 0.0
+    ankle2: 0.0
+
+  leg3:
+    hip3: 0.0
+    knee3: 0.0
+    ankle3: 0.0
+
+  leg4:
+    hip4: 0.0
+    knee4: 0.0
+    ankle4: 0.0
+
+  leg5:
+    hip5: 0.0
+    knee5: 0.0
+    ankle5: 0.0
+
+  leg6:
+    hip6: 0.0
+    knee6: 0.0
+    ankle6: 0.0

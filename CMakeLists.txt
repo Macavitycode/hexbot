@@ -4,6 +4,7 @@ project(hexbot)
 
 find_package(catkin REQUIRED
     roscpp
+    rosparam
     gazebo_ros REQUIRED
     std_msgs
     geometry_msgs
@@ -51,6 +52,7 @@ catkin_package(
   message_runtime
   gazebo_msgs
   roscpp
+  rosparam
   std_srvs
   geometry_msgs
   sensor_msgs
@@ -61,5 +63,9 @@ catkin_package(
 
 # add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS})
 
-add_executable(hexbot_node src/publisher.cpp src/subscriber.cpp)
-target_link_libraries(hexbot_node ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+add_executable(hexbot_pub src/publisher.cpp)
+add_executable(hexbot_sub src/subscriber.cpp)
+add_executable(hexbot_param src/write_from_param.cpp)
+target_link_libraries(hexbot_pub ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+target_link_libraries(hexbot_sub ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+target_link_libraries(hexbot_param ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})

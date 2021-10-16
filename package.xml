@@ -22,6 +22,7 @@ for hexbot robot</p>
   <depend>std_msgs</depend>
   <depend>std_srvs</depend>
   <depend>roscpp</depend>
+  <depend>rosparam</depend>
   <depend>urdf</depend>
   <depend>dynamic_reconfigure</depend>
   <depend>message_generation</depend>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <rosparam command="load" file="$(find hexbot)/config/motor_pos.yaml" />
+  <node pkg="hexbot" name="hexbot_param" type="hexbot_param" output="screen" />
+</launch>
