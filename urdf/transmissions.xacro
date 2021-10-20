@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="hexbot"
+  xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+  <xacro:macro
+    name="transmission_macro"
+    params="joint_name mechanical_reduction" >
+    <transmission
+      name="transmission_${joint_name}" >
+      <type>
+        transmission_interface/SimpleTransmission
+      </type>
+      <joint
+        name="${joint_name}">
+        <hardwareInterface>
+          hardware_interface/EffortJointInterface
+        </hardwareInterface>
+      </joint>
+      <actuator
+        name="actuator_${joint_name}">
+        <hardwareInterface>
+          hardware_interface/EffortJointInterface
+        </hardwareInterface>
+        <mechanicalReduction>
+          ${mechanical_reduction}
+        </mechanicalReduction>
+      </actuator>
+    </transmission>
+  </xacro:macro>
+
+  <xacro:macro
+    name="transmission_leg_group_macro" params="num">
+    <xacro:transmission_macro joint_name="thigh_${num}_joint" mechanical_reduction="1" />
+    <xacro:transmission_macro joint_name="shin_${num}_joint" mechanical_reduction="1" />
+    <xacro:transmission_macro joint_name="foot_${num}_joint" mechanical_reduction="1" />
+  </xacro:macro>
+
+  <xacro:transmission_leg_group_macro num="1" />
+  <xacro:transmission_leg_group_macro num="2" />
+  <xacro:transmission_leg_group_macro num="3" />
+  <xacro:transmission_leg_group_macro num="4" />
+  <xacro:transmission_leg_group_macro num="5" />
+  <xacro:transmission_leg_group_macro num="6" />
+
+</robot>

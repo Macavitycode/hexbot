@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
   
-  <param name="robot_description"
-    command="$(find xacro)/xacro $(find hexbot)/urdf/hexbot.xacro" />
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" 
     args="-param robot_description -urdf -model hexbot" />
 
   <!-- Set name of the world to be launched -->
   <arg name="world" default="empty"/>
   <!-- <arg name="world" default="$(find dumpster)/worlds/jackal_race.world"/> -->
+
+  <include file="$(find hexbot)/launch/control.launch" />
 
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <rosparam file="$(find hexbot)/config/hexbot_control.yaml" command="load"/>
+
+  <param name="robot_description"
+    command="$(find xacro)/xacro $(find hexbot)/urdf/hexbot.xacro" />
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/hexbot" args="joint_state_controller
+
+    thigh_1_position_controller
+    thigh_2_position_controller
+    thigh_3_position_controller
+    thigh_4_position_controller
+    thigh_5_position_controller
+    thigh_6_position_controller
+
+    shin_1_position_controller
+    shin_2_position_controller
+    shin_3_position_controller
+    shin_4_position_controller
+    shin_5_position_controller
+    shin_6_position_controller
+
+    foot_1_position_controller
+    foot_2_position_controller
+    foot_3_position_controller
+    foot_4_position_controller
+    foot_5_position_controller
+    foot_6_position_controller
+    "/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+    <remap from="/joint_states" to="/hex/joint_states" />
+  </node>
+
+</launch>

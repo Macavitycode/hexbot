@@ -6,6 +6,7 @@
   <xacro:include filename="macros.xacro" />
   <xacro:base_link_macro />
   <xacro:include filename="legs.xacro" />
+  <xacro:include filename="transmissions.xacro" />
 
   <link
     name="base_footprint">
@@ -21,5 +22,26 @@
     <child
       link="base_link" />
   </joint>
+
+  <gazebo>
+    <plugin
+      name="gazebo_ros_control"
+      filename="libgazebo_ros_control.so">
+      <robotNamespace>
+        /hexbot
+      </robotNamespace>
+    </plugin>
+  </gazebo>
+
+  <!-- <gazebo> -->
+    <!-- <plugin name="set_speed_joint_plugin" filename="libset_speed_joint_plugin.so"> -->
+      <!-- <namespace_model>hex</namespace_model> -->
+      <!-- <activate_pid_control>false</activate_pid_control>                 -->
+      <!-- <update_rate>10</update_rate> -->
+      <!-- <kp>1.0</kp> -->
+      <!-- <ki>0.0</ki> -->
+      <!-- <kd>0.0</kd> -->
+    <!-- </plugin> -->
+  <!-- </gazebo> -->
 
 </robot>

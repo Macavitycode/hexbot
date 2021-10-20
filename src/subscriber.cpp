@@ -1,3 +1,8 @@
+/* 
+ * Read from the /vel_msgs topic and send values to Gazebo to control joint 
+ * velocities through services
+ */
+
 #include "ros/ros.h"
 #include "hexbot/vel_msg.h"
 #include "gazebo/gazebo.hh"

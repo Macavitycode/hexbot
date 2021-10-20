@@ -27,7 +27,13 @@ for hexbot robot</p>
   <depend>dynamic_reconfigure</depend>
   <depend>message_generation</depend>
   <depend>message_runtime</depend>
+
+  <depend>controller_manager</depend>
+  <depend>joint_state_controller</depend>
+  
   <export>
+    <gazebo_ros gazebo_model_path="${prefix}/urdf" />
+    <gazebo_ros plugin_path="${prefix}/lib" gazebo_media_path="${prefix}" />
     <architecture_independent />
   </export>
 </package>
