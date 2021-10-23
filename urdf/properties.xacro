@@ -5,7 +5,7 @@
 
   <xacro:property name="lower_limit" value="-1" />
   <xacro:property name="upper_limit" value="1" />
-  <xacro:property name="effort_limit" value="0" />
-  <xacro:property name="velocity_limit" value="0" />
+  <xacro:property name="effort_limit" value="1" />
+  <xacro:property name="velocity_limit" value="1" />
 
 </robot>
