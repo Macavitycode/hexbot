@@ -32,70 +32,10 @@
       rpy="-1.5708 -1.0472 0" />
   </xacro:thigh_joint_macro>
 
-  <xacro:thigh_joint_macro num="2">
-    <origin
-      xyz="0.111400000000001 -0.051 0"
-      rpy="-1.5707963267949 0 0" />
-  </xacro:thigh_joint_macro>
-
-  <xacro:thigh_joint_macro num="3">
-    <origin
-      xyz="0.0556999999999999 -0.051 -0.0964752299815872"
-      rpy="-1.5707963267949 0.966273587280999 0" />
-  </xacro:thigh_joint_macro>
-
-  <xacro:thigh_joint_macro num="4">
-    <origin
-      xyz="-0.0557 -0.051 -0.096475"
-      rpy="1.5708 1.0472 -3.1416" />
-  </xacro:thigh_joint_macro>
-
-  <xacro:thigh_joint_macro num="5">
-    <origin
-      xyz="-0.1114 -0.051 0"
-      rpy="1.5708 0 3.1416" />
-  </xacro:thigh_joint_macro>
-
-  <xacro:thigh_joint_macro num="6">
-    <origin
-      xyz="-0.0557 -0.051 0.096475"
-      rpy="1.5708 -1.0472 3.1416" />
-  </xacro:thigh_joint_macro>
-
   <xacro:shin_joint_macro num="1">
     <origin
       xyz="0.0648 0.02575 0.02475"
       rpy="1.5707963267949 -0.785398163397449 0" />
-  </xacro:shin_joint_macro>
-
-  <xacro:shin_joint_macro num="2">
-    <origin
-      xyz="0.0648 0.02575 0.02675"
-      rpy="1.5708 -0.7854 0" />
-  </xacro:shin_joint_macro>
-
-  <xacro:shin_joint_macro num="3">
-    <origin
-      xyz="0.0648 0.02575 0.02675"
-      rpy="1.5708 -0.7854 0" />
-  </xacro:shin_joint_macro>
-
-  <xacro:shin_joint_macro num="4">
-    <origin
-      xyz="0.0647999999999991 0.02575 0.02675"
-      rpy="1.5707963267949 -0.785398163397448 0" />
-  </xacro:shin_joint_macro>
-
-  <xacro:shin_joint_macro num="5">
-    <origin
-      xyz="0.0648 0.02575 0.02675"
-      rpy="1.5708 -0.7854 0" />
-  </xacro:shin_joint_macro>
-
-  <xacro:shin_joint_macro num="6">
-    <origin
-      xyz="0.0648 0.02575 0.02675"
-      rpy="1.5708 -0.7854 0" />
   </xacro:shin_joint_macro>
 
   <xacro:foot_joint_macro num="1">
@@ -104,11 +44,35 @@
       rpy="0 0 0.61087" />
   </xacro:foot_joint_macro>
 
+  <xacro:thigh_joint_macro num="2">
+    <origin
+      xyz="0.111400000000001 -0.051 0"
+      rpy="-1.5707963267949 0 0" />
+  </xacro:thigh_joint_macro>
+
+  <xacro:shin_joint_macro num="2">
+    <origin
+      xyz="0.0648 0.02575 0.02675"
+      rpy="1.5708 -0.7854 0" />
+  </xacro:shin_joint_macro>
+
   <xacro:foot_joint_macro num="2">
     <origin
       xyz="0.0646999999999998 -0.000999999999999224 0"
       rpy="0 0 0.610865238198015" />
   </xacro:foot_joint_macro>
+
+  <xacro:thigh_joint_macro num="3">
+    <origin
+      xyz="0.0556999999999999 -0.051 -0.0964752299815872"
+      rpy="-1.5707963267949 0.966273587280999 0" />
+  </xacro:thigh_joint_macro>
+
+  <xacro:shin_joint_macro num="3">
+    <origin
+      xyz="0.0648 0.02575 0.02675"
+      rpy="1.5708 -0.7854 0" />
+  </xacro:shin_joint_macro>
 
   <xacro:foot_joint_macro num="3">
     <origin
@@ -116,17 +80,53 @@
       rpy="0 0 0.610865238198017" />
   </xacro:foot_joint_macro>
 
+  <xacro:thigh_joint_macro num="4">
+    <origin
+      xyz="-0.0557 -0.051 -0.096475"
+      rpy="1.5708 1.0472 -3.1416" />
+  </xacro:thigh_joint_macro>
+
+  <xacro:shin_joint_macro num="4">
+    <origin
+      xyz="0.0647999999999991 0.02575 0.02675"
+      rpy="1.5707963267949 -0.785398163397448 0" />
+  </xacro:shin_joint_macro>
+
   <xacro:foot_joint_macro num="4">
     <origin
       xyz="0.0647 -0.001 0"
       rpy="0 0 0.61087" />
   </xacro:foot_joint_macro>
 
+  <xacro:thigh_joint_macro num="5">
+    <origin
+      xyz="-0.1114 -0.051 0"
+      rpy="1.5708 0 3.1416" />
+  </xacro:thigh_joint_macro>
+
+  <xacro:shin_joint_macro num="5">
+    <origin
+      xyz="0.0648 0.02575 0.02675"
+      rpy="1.5708 -0.7854 0" />
+  </xacro:shin_joint_macro>
+
   <xacro:foot_joint_macro num="5">
     <origin
       xyz="0.0647000000000012 -0.00100000000000069 0"
       rpy="0 0 0.610865238198015" />
   </xacro:foot_joint_macro>
+
+  <xacro:thigh_joint_macro num="6">
+    <origin
+      xyz="-0.0557 -0.051 0.096475"
+      rpy="1.5708 -1.0472 3.1416" />
+  </xacro:thigh_joint_macro>
+
+  <xacro:shin_joint_macro num="6">
+    <origin
+      xyz="0.0648 0.02575 0.02675"
+      rpy="1.5708 -0.7854 0" />
+  </xacro:shin_joint_macro>
 
   <xacro:foot_joint_macro num="6">
     <origin
