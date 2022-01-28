@@ -8,7 +8,15 @@
   <arg name="world" default="empty"/>
   <!-- <arg name="world" default="$(find dumpster)/worlds/jackal_race.world"/> -->
 
-  <include file="$(find hexbot)/launch/control.launch" />
+  <!-- <include file="$(find hexbot)/launch/control.launch" /> -->
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+    <remap from="/joint_states" to="/hex/joint_states" />
+  </node>
+
+  <param name="robot_description"
+    command="$(find xacro)/xacro $(find hexbot)/urdf/hexbot.xacro" />
 
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>

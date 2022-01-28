@@ -36,7 +36,7 @@ include_directories(
 
 add_message_files(
     FILES
-    vel_msg.msg
+    pos_msg.msg
 )
 
 generate_messages(

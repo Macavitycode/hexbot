@@ -1,0 +1,20 @@
+<package format='2'>
+
+	<name>arm_sim</name>
+	<version>1.0.0</version>
+	<description>
+		Package for Lab 3 and 4 Problems
+	</description>
+	<maintainer email="praneeth.pep@gmail.com">Kvk Praneeth</maintainer>
+	<license>BSD</license>
+
+	<buildtool_depend>catkin</buildtool_depend>
+
+	<depend>rospy</depend>
+	<depend>urdf</depend>
+	<depend>gazebo_ros</depend>
+	<depend>gazebo_msgs</depend>
+	<depend>std_msgs</depend>
+	<depend>sensor_msgs</depend>
+
+</package>

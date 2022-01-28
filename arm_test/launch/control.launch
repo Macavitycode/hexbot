@@ -1,0 +1,6 @@
+<?xml version="1"?>
+
+<launch>
+  <include file="$(find arm_sim)/launch/simenv.launch"/>
+  <node name="arm_controller" pkg="arm_sim" type="controller.py" output="screen"/>
+</launch>
